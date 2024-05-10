@@ -1,0 +1,137 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body{
+    background: rgb(2,0,36);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.todo-container{
+    height: 500px;
+    width: 500px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    margin: 100px auto;
+    overflow: hidden;
+}
+.todo-heading{
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    justify-content: center;
+}
+
+.todo-heading h1{
+    font-size: 30px;
+    margin-right: 10px;
+}
+
+.todo-heading img{
+    width: 70px;
+}
+
+.todo-input-box{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #edeef0;
+    border-radius: 30px;
+    padding-left: 20px;
+    margin-bottom: 25px;
+    width: 100%;
+    margin-top: 10px;
+}
+.todo-input-box input{
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 10px;
+    font-weight: 14px;
+}
+.todo-input-box button{
+    border: none;
+    outline: none;
+    padding: 12px 50px;
+    border-radius: 40px;
+    background-color: orange;
+    font-size: 16px;
+    color: white;
+    font-weight: 500
+}
+
+.tasks-box{
+     overflow-y: scroll;
+}
+.tasks-box ul li{
+    list-style: none;
+    font-size: 15px;
+    user-select: none;
+    padding: 5px 8px 12px 30px;
+    position: relative;
+    cursor: pointer;
+}
+.tasks-box ul li::before{
+    content: '';
+    position: absolute;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    background-image: url(./images/unchecked.png);
+    background-size: cover;
+    background-position: center;
+    top: 10px;
+    left: 8px;
+}
+
+ul li.checked{
+    color: #555;
+    text-decoration: line-through;
+    font-style: italic;
+}
+ul li.checked::before{
+    background-image: url(./images/checked.png);
+}
+
+ul li span{
+    position: absolute;
+    right: 0;
+    width: 40px;
+    height: 40px;
+    font-size: 22px;
+    line-height: 40px;
+    text-align: center;
+    color: #555;
+    border-radius: 50%;
+}
+ul li span:hover{
+    background: #edeef0;
+}
+
+@media(max-width:500px){
+    .todo-container{
+        width: 90%;
+        max-height: 90%;
+        overflow: hidden;
+    }
+    .todo-heading h1{
+        font-size: 25px;
+    }
+    .todo-heading img{
+        width: 50px;
+    }
+    .todo-input-box button{
+        padding: 12px 40px;
+    }
+    .tasks-box{
+        overflow-y: scroll;
+    }
+    
+}
